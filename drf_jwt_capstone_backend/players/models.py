@@ -4,6 +4,7 @@ User = get_user_model()
 # Create your models here.
 class Player(models.Model):
     player = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=25)
     games_played = models.IntegerField()
     goals = models.IntegerField()
     assists = models.IntegerField()

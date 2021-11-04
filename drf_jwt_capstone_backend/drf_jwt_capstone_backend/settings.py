@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
     'players.apps.PlayersConfig',
+    'teams.apps.TeamsConfig',
 ]
 
 MIDDLEWARE = [
