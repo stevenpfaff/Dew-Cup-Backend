@@ -3,4 +3,4 @@ from .models import Team
 class TeamSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ['id', 'name', 'wins', 'losses', 'championships', 'players']
+        fields = ['name', 'wins', 'losses', 'championships']

@@ -7,4 +7,4 @@ class Team(models.Model):
     wins = models.IntegerField()
     losses = models.IntegerField()
     championships = models.IntegerField()
-    players = models.IntegerField()
+    
