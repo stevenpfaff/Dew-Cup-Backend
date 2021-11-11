@@ -19,7 +19,7 @@ def get_all_teams(request):
 
 
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def user_team(request):
     if request.method == 'POST':
         serializer = TeamSerialzer(data=request.data)
@@ -28,6 +28,6 @@ def user_team(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        teams = Team.objects.filter(team_id=request.user.id)
+        teams = Team.objects.filter(id=request.user.id)
         serializer = TeamSerialzer(teams, many=True)
         return Response(serializer.data)
