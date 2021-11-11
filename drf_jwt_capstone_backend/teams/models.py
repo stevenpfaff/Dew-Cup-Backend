@@ -6,5 +6,8 @@ class Team(models.Model):
     name = models.CharField(max_length=25)
     wins = models.IntegerField()
     losses = models.IntegerField()
+    goals = models.IntegerField()
+    goals_against = models.IntegerField()
     championships = models.IntegerField()
+    players = models.CharField(max_length=100)
     
