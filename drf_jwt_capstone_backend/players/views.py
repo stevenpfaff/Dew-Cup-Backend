@@ -31,3 +31,13 @@ def user_player(request, name):
         players = Player.objects.filter(name=name)
         serializer = PlayerSerialzer(players, many=True)
         return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def create_player(request):
+    if request.method == 'POST':
+        serializer = PlayerSerialzer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
