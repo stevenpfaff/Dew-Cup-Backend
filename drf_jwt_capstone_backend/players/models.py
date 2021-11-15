@@ -8,3 +8,4 @@ class Player(models.Model):
     goals = models.IntegerField()
     assists = models.IntegerField()
     info = models.CharField(max_length=500)
+    file = models.TextField()

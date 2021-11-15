@@ -20,7 +20,7 @@ def get_all_players(request):
 
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
-def user_player(request):
+def user_player(request, name):
     if request.method == 'POST':
         serializer = PlayerSerialzer(data=request.data)
         if serializer.is_valid():
@@ -28,6 +28,6 @@ def user_player(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        players = Player.objects.filter(player_id=request.user.id)
+        players = Player.objects.filter(name=name)
         serializer = PlayerSerialzer(players, many=True)
         return Response(serializer.data)
