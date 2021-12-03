@@ -14,5 +14,5 @@ class Team(models.Model):
     runs = models.IntegerField()
     runs_against = models.IntegerField()
     homeruns = models.IntegerField()
-    batting_average = models.DecimalField(max_digits=3, decimal_places=3)
+    batting_average = models.IntegerField()
     
