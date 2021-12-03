@@ -9,3 +9,8 @@ class Player(models.Model):
     assists = models.IntegerField()
     info = models.CharField(max_length=500)
     file = models.TextField()
+    minibat_games_played = models.IntegerField()
+    at_bats = models.IntegerField()
+    hits = models.IntegerField()
+    homeruns = models.IntegerField()
+    batting_average = models.DecimalField(max_digits=3, decimal_places=3)
