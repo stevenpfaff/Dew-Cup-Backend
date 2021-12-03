@@ -10,4 +10,5 @@ class Team(models.Model):
     goals_against = models.IntegerField()
     championships = models.IntegerField()
     players = models.CharField(max_length=100)
+    file = models.TextField()
     

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'players.apps.PlayersConfig',
     'teams.apps.TeamsConfig',
-    'tournament.apps.TournamentConfig'
+    'tournament.apps.TournamentConfig',
+    'games.apps.GamesConfig'
 ]
 
 MIDDLEWARE = [
