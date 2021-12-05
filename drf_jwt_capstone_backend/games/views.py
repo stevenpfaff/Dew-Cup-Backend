@@ -20,7 +20,7 @@ def get_all_games(request):
 
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
-def single_game(request, name):
+def single_game(request, game):
     if request.method == 'POST':
         serializer = GameSerialzer(data=request.data)
         if serializer.is_valid():
@@ -28,7 +28,7 @@ def single_game(request, name):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        games = Game.objects.filter(name=name)
+        games = Game.objects.filter(game=game)
         serializer = GameSerialzer(games, many=True)
         return Response(serializer.data)
 
