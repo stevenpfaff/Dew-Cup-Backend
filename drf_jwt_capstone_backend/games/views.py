@@ -1,3 +1,4 @@
+from django.http.response import Http404
 from rest_framework import status
 from rest_framework.serializers import Serializer
 from rest_framework.views import APIView
@@ -20,7 +21,7 @@ def get_all_games(request):
 
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
-def single_game(request, game):
+def tourney_game(request, game):
     if request.method == 'POST':
         serializer = GameSerialzer(data=request.data)
         if serializer.is_valid():
@@ -29,6 +30,14 @@ def single_game(request, game):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         games = Game.objects.filter(game=game)
+        serializer = GameSerialzer(games, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def single_game (request, games_pk):
+    if request.method == 'GET':
+        games = Game.objects.filter(id = games_pk)
         serializer = GameSerialzer(games, many=True)
         return Response(serializer.data)
 
@@ -41,3 +50,4 @@ def create_game(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
