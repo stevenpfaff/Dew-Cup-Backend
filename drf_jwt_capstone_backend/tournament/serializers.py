@@ -3,4 +3,4 @@ from .models import Tourney
 class TourneySerialzer(serializers.ModelSerializer):
     class Meta:
         model = Tourney
-        fields = ['name', 'teams', 'champions', 'mvp', 'players']
+        fields = ['name', 'teams', 'champions', 'mvp']
