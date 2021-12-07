@@ -7,4 +7,5 @@ class Tourney(models.Model):
     teams = models.CharField(max_length=500)
     champions = models.CharField(max_length=25)
     mvp = models.CharField(max_length=25)
+    file = models.TextField()
 
