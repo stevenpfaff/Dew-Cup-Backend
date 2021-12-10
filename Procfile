@@ -1,1 +1,1 @@
-web:gunicorn dew-cup-backend.wsgi --log-file-
+web: gunicorn dew-cup-backend.wsgi --log-file-
