@@ -7,11 +7,11 @@ SECRET_KEY = '-2#se2w2t^20h%7g6_6+(zztxlmz#99f*r(dgsri7@ip_8zov@'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'dew_cup_tourney',
-        'USER': 'root',
-        'PASSWORD': 'stammer91',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': 'd3ilautsv8sm7d',
+        'USER': 'hlqnsfwvgncvky',
+        'PASSWORD': 'f20a67a1e4e85d9d388a7b2649fa3d9995c8b20b48509229c23e7bb40b051d4a',
+        'HOST': 'ec2-44-193-111-218.compute-1.amazonaws.com',
+        'PORT': '5432',
         'OPTIONS': {
             'autocommit': True
         }
