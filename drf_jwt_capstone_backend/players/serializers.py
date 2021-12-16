@@ -3,4 +3,4 @@ from .models import Player
 class PlayerSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = [ 'name', 'games_played', 'minibat_games_played', 'at_bats', 'hits', 'homeruns', 'batting_average', 'info', 'file']
+        fields = [ 'name', 'games_played', 'goals', 'assists', 'minibat_games_played', 'at_bats', 'hits', 'homeruns', 'batting_average', 'info', 'file']

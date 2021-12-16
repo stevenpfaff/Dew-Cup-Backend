@@ -5,6 +5,8 @@ User = get_user_model()
 class Player(models.Model):
     name = models.CharField(max_length=25)
     games_played = models.IntegerField()
+    goals = models.IntegerField()
+    assists = models.IntegerField()
     info = models.CharField(max_length=500)
     file = models.TextField()
     minibat_games_played = models.IntegerField()
